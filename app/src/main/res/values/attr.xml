@@ -2,8 +2,8 @@
 <resources>
     
     <declare-styleable name="DisposeLayout">
-        <attr name="paddingV" format="string"/>
-        <attr name="paddingH" format="string"/>
+        <attr name="paddingV" format="dimension"/>
+        <attr name="paddingH" format="dimension"/>
     </declare-styleable>
     
 </resources>

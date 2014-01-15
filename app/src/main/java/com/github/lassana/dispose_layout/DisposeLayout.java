@@ -32,12 +32,12 @@ public class DisposeLayout extends ViewGroup {
 
     public DisposeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPaddings(context, attrs);
+        initAttrs(context, attrs);
     }
 
     public DisposeLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setPaddings(context, attrs);
+        initAttrs(context, attrs);
     }
 
     public void setPaddings(int paddingH, int paddingV) {
@@ -45,16 +45,12 @@ public class DisposeLayout extends ViewGroup {
         mPaddingV = paddingV;
     }
 
-    protected void setPaddings(Context context, AttributeSet attrs) {
+    protected void initAttrs(Context context, AttributeSet attrs) {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.DisposeLayout);
-        String h = array.getString(R.styleable.DisposeLayout_paddingH);
-        String v = array.getString(R.styleable.DisposeLayout_paddingV);
-        if (h == null || v == null) {
-            setPaddings(h == null ? 0 : Integer.parseInt(h), v == null ? 0 : Integer.parseInt(v));
-        } else {
-            setPaddings(Integer.parseInt(h), Integer.parseInt(v));
-            array.recycle();
-        }
+        int h = array.getDimensionPixelSize(R.styleable.DisposeLayout_paddingH, 0);
+        int v = array.getDimensionPixelSize(R.styleable.DisposeLayout_paddingV, 0);
+        setPaddings(h, v);
+        array.recycle();
     }
 
     public int getPaddingV() {
