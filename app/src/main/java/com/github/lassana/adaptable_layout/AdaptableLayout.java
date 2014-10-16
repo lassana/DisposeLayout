@@ -1,4 +1,4 @@
-package com.github.lassana.dispose_layout;
+package com.github.lassana.adaptable_layout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,11 +6,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.lassana.adaptable_layout.R;
+
 /**
  * @author lassana
  * @since 1/10/14
  */
-public class DisposeLayout extends ViewGroup {
+public class AdaptableLayout extends ViewGroup {
 
     /**
      * Vertical padding between elements
@@ -25,31 +27,31 @@ public class DisposeLayout extends ViewGroup {
      */
     private int mHeight;
 
-    public DisposeLayout(Context context) {
+    public AdaptableLayout(Context context) {
         super(context);
-        setPaddings(0, 0);
+        setPadding(0, 0);
     }
 
-    public DisposeLayout(Context context, AttributeSet attrs) {
+    public AdaptableLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         initAttrs(context, attrs);
     }
 
-    public DisposeLayout(Context context, AttributeSet attrs, int defStyle) {
+    public AdaptableLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initAttrs(context, attrs);
     }
 
-    public void setPaddings(int paddingH, int paddingV) {
+    public void setPadding(int paddingH, int paddingV) {
         mPaddingH = paddingH;
         mPaddingV = paddingV;
     }
 
     protected void initAttrs(Context context, AttributeSet attrs) {
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.DisposeLayout);
-        int h = array.getDimensionPixelSize(R.styleable.DisposeLayout_paddingH, 0);
-        int v = array.getDimensionPixelSize(R.styleable.DisposeLayout_paddingV, 0);
-        setPaddings(h, v);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.AdaptableLayout);
+        int h = array.getDimensionPixelSize(R.styleable.AdaptableLayout_paddingH, 0);
+        int v = array.getDimensionPixelSize(R.styleable.AdaptableLayout_paddingV, 0);
+        setPadding(h, v);
         array.recycle();
     }
 
