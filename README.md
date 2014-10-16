@@ -1,6 +1,17 @@
-DisposeLayout
+AdaptableLayout
 =============
 
 The layout that can arrange children automatically.
 
-![Screenshot](device-2014-01-10-124106.png)
+Code:
+---
+    AdaptableLayout layout = (AdaptableLayout) view.findViewById(R.id.layout);
+    layout.addView(button1);
+    layout.addView(button2);
+    layout.addView(button3);
+    //...
+
+Result:
+---
+
+![Screenshot](device-2014-10-16-121105.png)
