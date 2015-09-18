@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.github.lassana.adaptable_layout.R;
+import com.github.lassana.adaptable_layout.sample.R;
 
 import java.util.Random;
 
